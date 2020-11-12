@@ -5,7 +5,7 @@ on:
     inputs:
       parameter1:
         description: resource group name
-        required: true
+        required: false
 
 name: AzureCLISample
 
@@ -25,6 +25,6 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az deployment group create --resource-group ${{ github.event.inputs.parameters1 }} --template-file ./Hands-on-Lab/templates/deploy-vm-as-domain-member.json --parameters ./Hands-on-Lab/templates/deploy-vm-as-domain-member.parameters.json
+            az deployment group create --resource-group 12_MCW-RG --template-file ./Hands-on-Lab/templates/deploy-vm-as-domain-member.json --parameters ./Hands-on-Lab/templates/deploy-vm-as-domain-member.parameters.json
 
           
