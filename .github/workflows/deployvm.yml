@@ -24,7 +24,7 @@ jobs:
       - name: Azure CLI script
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.0.72
           inlineScript: |
-            az deployment group create --resource-group ${{github.event.inputs.parameter1}} --template-file ./Hands-on-Lab/templates/deploy-vm-as-domain-member.json --parameter-file ./Hands-on-Lab/templates/deploy-vm-as-domain-member.parameters.json
+            az deployment group create --resource-group ${{ github.event.inputs.parameters1 }} --template-file ./Hands-on-Lab/templates/deploy-vm-as-domain-member.json --parameters ./Hands-on-Lab/templates/deploy-vm-as-domain-member.parameters.json
+
           
